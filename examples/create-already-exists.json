@@ -1,0 +1,12 @@
+{
+    "errors": [
+        {
+            "code": 1007,
+            "location": "Create New Customer",
+            "condition": "If a customer already exists with the exact title,name and address then a new record will not be created",
+            "rationale": "If a customer of the same title, name and address exists then it should be retrievable through the search operation",
+            "errorMessage": "A customer already exists with the same title, name and address.  Please use the search functionality to retrieve this customer or use the customer ID <XXXX>",
+            "actionNeeded": "Either use the title, name and address to find the customer or use the customer id returned in the error message."
+        }
+    ]
+}

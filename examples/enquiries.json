@@ -1,0 +1,41 @@
+[
+  {
+    "consultant": "consultant1",
+    "customerId": "1",
+    "departureDate": "2016-02-24T08:20:08.542",
+    "destination": "destination1",
+    "operator": "operator1",
+    "passengers": 3,
+    "product": "product1",
+    "reference": "reference1",
+    "status": "status1",
+    "transactionDate": "2016-02-24T08:20:08.542",
+    "value": 1500
+  },
+  {
+    "consultant": "consultant4",
+    "customerId": "1",
+    "departureDate": "2016-02-24T08:20:08.543",
+    "destination": "destination4",
+    "operator": "operator4",
+    "passengers": 4,
+    "product": "product4",
+    "reference": "reference4",
+    "status": "status4",
+    "transactionDate": "2016-02-24T08:20:08.543",
+    "value": 1500
+  },
+  {
+    "consultant": "consultant11",
+    "customerId": "1",
+    "departureDate": "2016-02-24T08:20:08.543",
+    "destination": "destination11",
+    "operator": "operator11",
+    "passengers": 11,
+    "product": "product11",
+    "reference": "reference11",
+    "status": "status11",
+    "transactionDate": "2016-02-24T08:20:08.543",
+    "value": 1500
+  }
+]

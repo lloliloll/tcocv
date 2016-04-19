@@ -1,0 +1,26 @@
+[
+  {
+    "case": {
+      "bookingReferenceId": "8070/325826040",
+      "date": "2016-02-24T08:19:18.532",
+      "owner": "Jones",
+      "referenceId": "325826040",
+      "severity": "Critical",
+      "status": "LIVE",
+      "type": "Complaint"
+    },
+    "customerId": "1"
+  },
+  {
+    "case": {
+      "bookingReferenceId": "ABC/325826040",
+      "date": "2014-09-18T10:20:30",
+      "owner": "Joseph",
+      "referenceId": "325826034",
+      "severity": "Lethal",
+      "status": "LIVE",
+      "type": "Complaint"
+    },
+    "customerId": "1"
+  }
+]

@@ -1,0 +1,12 @@
+{
+    "errors": [
+        {
+            "code": 1009,
+            "location": "Update Customer",
+            "condition": "This can occur when an update is requested for a customer id that does not match any customers",
+            "rationale": "Its possible for the customer id being passed in to be incorrect or corrupted. ",
+            "errorMessage": "The customer you are updating does not exist.  Please recheck the customer id you provided is correct.  The customer id you provided was <XXXX>",
+            "actionNeeded": "Please check that the customer id is correct to what was retrieved.  A ticket has been raised within GBG to confirm if this custoemr id exists."
+        }
+    ]
+}

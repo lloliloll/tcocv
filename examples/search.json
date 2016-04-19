@@ -1,0 +1,153 @@
+[
+  {
+    "customer": {
+      "identity": {
+        "customerID": "046fa7b7-82e2-486b-b3da-42ae0f4ace6e",
+        "title": "Dr",
+        "firstName": "Evelyn",
+        "middlenames": [
+          "Jane"
+        ],
+        "surname": "Ford",
+        "gender": "F",
+        "dateOfBirth": "2007-01-20",
+        "contactable": "Y",
+        "capture": {
+          "urn": 333,
+          "date": "01/01/2015",
+          "modified": "01/01/2015"
+        }
+      },
+      "addresses": [
+        {
+          "type": "HOME",
+          "contactable": "Y",
+          "lines": [
+            "48 Moose Street",
+            "65 Bowman Trail",
+            "8 Oak Valley Hill",
+            "0063 Mayer Hill"
+          ],
+          "townCity": "Satsumasendai",
+          "county": "Bath and North East Somerset",
+          "postcode": null,
+          "country": "Japan",
+          "capture": {
+            "urn": 333,
+            "date": "01/01/2015",
+            "modified": "01/01/2015"
+          }
+        },
+        {
+          "type": "WORK",
+          "contactable": "Y",
+          "lines": [
+            "4682 Cherokee Park",
+            "402 Lindbergh Avenue",
+            "307 Transport Circle",
+            "3317 Charing Cross Road"
+          ],
+          "townCity": "Bratislava",
+          "county": "Peterborough",
+          "postcode": "841 01",
+          "country": "Slovakia",
+          "capture": {
+            "urn": 555,
+            "date": "01/01/2015",
+            "modified": "01/01/2015"
+          }
+        }
+      ],
+      "emails": [
+        {
+          "type": "PERSONAL",
+          "contactable": "Y",
+          "address": "hlittle0@clickbank.net",
+          "capture": {
+            "urn": 666,
+            "date": "01/01/2015",
+            "modified": "01/01/2015"
+          }
+        },
+        {
+          "type": "BUSINESS",
+          "contactable": "N",
+          "address": "rfoster1@nifty.com",
+          "capture": {
+            "urn": 666,
+            "date": "01/01/2015",
+            "modified": "01/01/2015"
+          }
+        }
+      ],
+      "phones": [
+        {
+          "type": "HOME",
+          "contactable": "Y",
+          "number": "235-(968)837-1009",
+          "capture": {
+            "urn": 666,
+            "date": "01/01/2015",
+            "modified": "01/01/2015"
+          }
+        },
+        {
+          "type": "WORK",
+          "contactable": "N",
+          "number": "86-(289)664-5158",
+          "capture": {
+            "urn": 666,
+            "date": "01/01/2015"
+          }
+        },
+        {
+          "type": "MOBILE1",
+          "contactable": "Y",
+          "number": "86-(539)100-3079",
+          "capture": {
+            "urn": 666,
+            "date": "01/01/2015"
+          }
+        },
+        {
+          "type": "MOBILE2",
+          "contactable": "N",
+          "number": "55-(436)381-4883",
+          "capture": {
+            "urn": 777,
+            "date": "01/01/2015"
+          }
+        }
+      ],
+      "socials": [
+        {
+          "type": "Google",
+          "value": "google.ca",
+          "capture": {
+            "urn": 777,
+            "date": "01/01/2015"
+          }
+        },
+        {
+          "type": "Other",
+          "value": "sitemeter.com",
+          "capture": {
+            "urn": 888,
+            "date": "01/01/2015"
+          }
+        }
+      ],
+      "additional": {
+        "PAFed": "N",
+        "customerType": "",
+        "inputDPS": "",
+        "deceasedInd ": "",
+        "dod": "",
+        "gonewayind ": "",
+        "foreignAddressInd ": "",
+        "mpsIndicator": "",
+        "privilageCardNo ": ""
+      }
+    }
+  }
+]

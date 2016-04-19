@@ -1,0 +1,313 @@
+#%RAML 0.8
+title: TCOCV
+version: 1.1
+baseUri: http://server/api/{version}/tcocv
+/customers:
+  get:
+    queryParameters: 
+      type:
+        default: EXACT
+        enum:  [FUZZY, EXACT]
+      consultationId:
+      bookingRef:
+      title: 
+      firstName:    
+      surname:
+      street:
+      postcode:
+      emailAddress: 
+      telephoneNumber:           
+    description: Looks for customers using the elements provided as query parameters.  This will return a list of customers, their current address and contact details 
+    responses:
+      200:
+        description: A succesfull search that has returned at least one person.  The data will always be returned in an array.
+        body:
+          application/json:
+            example: !include examples/search.json
+      204:
+        description: No customers were found with the provided search criteria. An empty array will be returned
+        body:
+          application/json:
+            example: |
+              []        
+      400:
+        description: The request failed validation.  This should only occur if a search is required but the parameters were not set correctly
+        body:
+          application/json: 
+            example: !include examples/search-invalid.json   
+      403:
+        description: The access failed authentication
+        body:
+          application/json:
+            example: !include examples/security.json     
+  post:
+    description: Creates a new customer resource. This will contain their personal information, address and other contact information    
+    body:
+      application/json:
+        example: !include examples/customer.json            
+    responses:
+      201:
+        headers:
+          customer-id:
+            type: string
+        description: The customer was created successfully       
+      400:
+        description: The request failed validation.  The exact errors are captured in the JSON response
+        body:
+          application/json:
+            example: !include examples/create-invalid.json
+      403:
+        description: The access failed authentication
+        body:
+          application/json:
+            example: !include examples/security.json 
+      409:
+        description: The customer could not be created as another customer with the exact title, name and address.  The response will include the identifier of that customer found
+        headers:
+          matched-customer-id:
+            type: string
+        body:
+          application/json:
+            example: !include examples/create-already-exists.json
+  /{customerID}:
+    get:
+      description: Gets the specific customer information for this identifier
+      responses:
+        200:
+          description: The request was succesful and a customer was found
+          body:
+            application/json:
+              example: !include examples/customer.json
+        204:
+          description: The request was succesful but no customer was found with that ID. An empty element is returned
+          body:
+            application/json:
+              example: | 
+                {}      
+        403:
+          description: The access failed authentication
+          body:
+            application/json:
+              example: !include examples/security.json                      
+             
+    patch:
+      description: This allows elements of the customer resource to be updated or added to
+      responses:
+        200:
+          description: The patch call was succesful
+        400:
+          description: The request failed validation
+        403:
+          description: The access failed authentication
+          body:
+            application/json:
+              example: !include examples/security.json              
+        404:
+          description: The customer belonging to id provided could not be found
+          body:
+            application/json:
+              example: !include examples/update-not-found.json
+    /statistics:
+      get:
+        description: Retrieves statistical informaiton for the provided customer id
+        responses:
+          200:
+            description: The request was successful
+            body:
+              application/json:
+                example: !include examples/stats.json
+          204:
+            description: The request was succesful but no customer was found with that ID. An empty element is returned
+            body:
+              application/json:
+                example: |
+                  {}        
+          403:
+            description: The access failed authentication
+            body:
+              application/json:
+                example: !include examples/security.json
+    /holidayBookings:
+      get:
+        description: Retrives booking information for the indicated customer
+        responses:
+          200:
+            description: The request was successful
+            body:
+              application/json:
+                example: !include examples/bookings.json
+          204:
+            description: The request was succesful but no customer was found with that ID. An empty element is returned
+            body:
+              application/json:
+                example: |
+                  {}  
+          403:
+            description: The access failed authentication
+            body:
+              application/json:
+                example: !include examples/security.json
+    /enquiries:
+      get:
+        description: Provides a list of equiries made by the customer
+        responses:
+          200:
+            description: The request was successful
+            body:
+              application/json:
+                example: !include examples/enquiries.json                  
+          204:
+            description: The request was succesful but no customer was found with that ID. An empty element is returned
+            body:
+              application/json:
+                example: |
+                  {}            
+          403:
+            description: The access failed authentication
+            body:
+              application/json:
+                example: !include examples/security.json
+    /complaints:
+      get:
+        description:
+        responses:
+          200:
+            description: The request was successful
+            body:
+              application/json:
+                example: !include examples/complaints.json
+          204:
+            description: The request was succesful but no customer was found with that ID. An empty element is returned
+            body:
+              application/json:
+                example: |
+                  {}           
+          403:
+            description: The access failed authentication
+            body:
+              application/json:
+                example: !include examples/security.json
+    /communications:
+      get:
+        description:
+        responses:
+          200:
+            description: The request was successful
+            body:
+              application/json:
+                example: !include examples/communications.json
+          204:
+            description: The request was succesful but no customer was found with that ID.  An empty element is returned
+            body:
+              application/json:
+                example: |
+                  {}           
+          403:
+            description: The access failed authentication
+            body:
+              application/json:
+                example: !include examples/security.json
+    /preferences:
+      get:
+        description:
+        responses:
+          200:
+            description: The request was successful and preferences have been found
+            body:
+              application/json:
+                example: !include examples/preferences.json
+          204:
+            description: The request was succesful but no preferences were found.  An empty element is returned
+            body:
+              application/json:
+                example: |
+                  {}    
+          403:
+            description: The access failed authentication
+            body:
+              application/json:
+                example: !include examples/security.json
+          404:
+            description: No customer was found with the supplied customer ID
+    /wishlist:
+      get:
+        description:
+        responses:
+          200:
+            description: The request was successful
+            body:
+              application/json:
+                example: !include examples/wishlists.json
+          204:
+            description: The request was succesful but no customer was found with that ID.  An empty element is returned
+            body:
+              application/json:
+                example: |
+                  {}          
+          403:
+            description: The access failed authentication
+            body:
+              application/json:
+                example: !include examples/security.json
+    /weRecommend:
+      get:
+        description: Retrieves a list of recomendations
+        responses:
+          200:
+            description: The request was successful
+            body:
+              application/json:
+                
+                example: !include examples/we-recommend.json
+          204:
+            description: The request was succesful but no customer was found with that ID.  An empty element is returned
+            body:
+              application/json:
+                example: |
+                  {}         
+          403:
+            description: The access failed authentication
+            body:
+              application/json:
+                example: !include examples/security.json
+      patch:
+        description: Updates a recomendation based on the cusotmers response
+        responses:
+          200:
+            description: The request was successful
+            body:
+              application/json:
+                example: !include examples/we-recommend-update.json                 
+          400:
+            description: The request failed validation
+          403:
+            description: The access failed authentication
+            body:
+              application/json:
+                example: !include examples/security.json
+          404:
+            description: The customer belonging to id provided could not be found
+            body:
+              application/json:
+                example: !include examples/update-not-found.json
+    /marketingOptions:
+      get:
+        description:
+        responses:
+          200:
+            description: The request was successful
+            body:
+              application/json:
+                example: !include examples/marketing-options.json
+          204:
+            description: The request was succesful but no customer was found with that ID. An empty element is returned
+            body:
+              application/json:
+                example: |
+                  {}           
+          403:
+            description: The access failed authentication
+            body:
+              application/json:
+                example: !include examples/security.json      
+   

@@ -1,0 +1,50 @@
+[
+  {
+    "brand": "Ferdinand",
+    "campaignReference": "ed8f231f-74d1-4e33-90fa-dfdf1c0e4163",
+    "communicationId": "364e",
+    "customerId": "1",
+    "date": "2016-02-24T08:19:37.979",
+    "description": "Isopropyl Alcohol",
+    "directMailReturnDate": "2016-02-24T08:19:37.979",
+    "emailBounceDate": "2016-02-24T08:19:37.979",
+    "emailClickThroughDate": "2016-02-24T08:19:37.979",
+    "media": "media1",
+    "sentTo": "eschmidt4@youtu.be",
+    "source": "LiveZ",
+    "templateReference": "d7e5-4373-8241-bc937beccf35",
+    "type": "type1"
+  },
+  {
+    "brand": "Acton",
+    "campaignReference": "ba541045-ba80-40dd-8cc3-59764d935f39",
+    "communicationId": "234c",
+    "customerId": "1",
+    "date": "2016-02-24T08:19:37.979",
+    "description": "PAROXETINE HYDROCHLORIDE",
+    "directMailReturnDate": "2016-02-24T08:19:37.979",
+    "emailBounceDate": "2016-02-24T08:19:37.979",
+    "emailClickThroughDate": "2016-02-24T08:19:37.979",
+    "media": "media2",
+    "sentTo": "smitchell3@ucsd.edu",
+    "source": "Oyonder",
+    "templateReference": "3b07b9188241-bc937beccf35",
+    "type": "type2"
+  },
+  {
+    "brand": "Grady",
+    "campaignReference": "eabdc96a-b086-4aae-86e7-eff3823973ea",
+    "communicationId": "ae3a",
+    "customerId": "1",
+    "date": "2016-02-24T08:19:37.979",
+    "description": "Gabapentin",
+    "directMailReturnDate": "2016-02-24T08:19:37.979",
+    "emailBounceDate": "2016-02-24T08:19:37.979",
+    "emailClickThroughDate": "2016-02-24T08:19:37.979",
+    "media": "media3",
+    "sentTo": "clynch2@ycombinator.com",
+    "source": "Voonder",
+    "templateReference": "3b07b918-d7e5-37beccf35",
+    "type": "type3"
+  }
+]

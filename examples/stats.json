@@ -1,0 +1,16 @@
+{
+  "amountOverdue": 30,
+  "customerId": "1",
+  "eldestChildDOBYear": 3,
+  "fexSpendLast90Days": 90,
+  "lifetimeSalesValue": 100,
+  "marketingSegment": "A",
+  "myAccountFlag": "Y",
+  "numberBookingsLast3Years": 3,
+  "numberChildren": 3,
+  "numberComplaintsLast3Years": 1,
+  "numberLiveBookings": 2,
+  "numberLiveComplaints": 2,
+  "surpriseBookingFlag": "Y",
+  "youngestChildDOBYear": 1
+}

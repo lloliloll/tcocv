@@ -1,0 +1,38 @@
+[
+  {
+    "abandoned": "yes",
+    "customerId": "1",
+    "date": "2016-02-25T12:00:11.127Z",
+    "destination": "some destination-1",
+    "emailAddress": "tom@strickland.com",
+    "property": "some property-1",
+    "propertyImageUrl": "https://www.google.co.uk/logos/doodles/2015/winter-solstice-2015-northern-hemisphere-6198071570464768-hp.gif",
+    "reference": "reference-1",
+    "resort": "some resort-1",
+    "startRating": "5"
+  },
+  {
+    "abandoned": "no",
+    "customerId": "1",
+    "date": "2016-02-25T12:00:11.127Z",
+    "destination": "some destination-2",
+    "emailAddress": "tom@strickland.com",
+    "property": "some property-2",
+    "propertyImageUrl": "link to image",
+    "reference": "reference-2",
+    "resort": "some resort-2",
+    "startRating": "3"
+  },
+  {
+    "abandoned": "yes",
+    "customerId": "1",
+    "date": "2016-02-25T12:00:11.127Z",
+    "destination": "some destination-3",
+    "emailAddress": "tom@strickland.com",
+    "property": "some property-3",
+    "propertyImageUrl": "https://www.google.co.uk/logos/doodles/2015/winter-solstice-2015-northern-hemisphere-6198071570464768-hp.gif",
+    "reference": "reference-3",
+    "resort": "some resort-3",
+    "startRating": "4"
+  }
+]

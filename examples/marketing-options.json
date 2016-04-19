@@ -1,0 +1,76 @@
+{
+  "emailContactsList": [
+    {
+      "customerId": "1",
+      "emailAddress": "rhenry0@mashable.com",
+      "emailBrandsList": [
+        {
+          "brand": "Meevee",
+          "date": "2016-02-25T11:54:15.152",
+          "optInFlag": "N"
+        },
+        {
+          "brand": "Skidoo",
+          "date": "2016-02-25T11:54:15.152",
+          "optInFlag": "N"
+        },
+        {
+          "brand": "Devpoint",
+          "date": "2016-02-25T11:54:15.152",
+          "optInFlag": "N"
+        }
+      ],
+      "emailInvalid": "N",
+      "emailPreferredIndicator": "N",
+      "emailType": "personal"
+    }
+  ],
+  "telephoneContactsList": [
+    {
+      "customerId": "1",
+      "telephoneBrandsList": [
+        {
+          "brand": "Fatz",
+          "date": "2016-02-25T11:54:15.151",
+          "optInFlag": "Y"
+        },
+        {
+          "brand": "Fadeo",
+          "date": "2016-02-25T11:54:15.151",
+          "optInFlag": "N"
+        },
+        {
+          "brand": "Kwinu",
+          "date": "2016-02-25T11:54:15.151",
+          "optInFlag": "Y"
+        },
+        {
+          "brand": "Agimba",
+          "date": "2016-02-25T11:54:15.151",
+          "optInFlag": "N"
+        }
+      ],
+      "telephoneNumber": "86-(312)855-0639",
+      "telephonePreferredIndicator": "Y",
+      "telephoneType": "personal"
+    },
+    {
+      "customerId": "1",
+      "telephoneBrandsList": [
+        {
+          "brand": "Dabtype",
+          "date": "2016-02-25T11:54:15.151",
+          "optInFlag": "N"
+        },
+        {
+          "brand": "Dynabox",
+          "date": "2016-02-25T11:54:15.151",
+          "optInFlag": "Y"
+        }
+      ],
+      "telephoneNumber": "30-(541)662-1995",
+      "telephonePreferredIndicator": "N",
+      "telephoneType": "business"
+    }
+  ]
+}

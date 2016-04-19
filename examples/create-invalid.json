@@ -1,0 +1,20 @@
+{
+    "errors": [
+        {
+            "code": 1002,
+            "location": "/customer/identity/title",
+            "condition": "If the incoming customer information does not comply to the JSON schema the request will be rejected ",
+            "rationale": "The data is not stored 'as-is', it is stored and queried in a more complex way that requires an understanding of the data being passed.  This requires a schema to define that understanding and rules to govern it.",
+            "errorMessage": "The title field must be populated",
+            "actionNeeded": "Review the error messages and correct the format the data is delivered to GBG and re-submit"
+        },
+        {
+            "code": 1003,
+            "location": "/customer/identity/forename",
+            "condition": "If the incoming customer information does not comply to the JSON schema the request will be rejected ",
+            "rationale": "The data is not stored 'as-is', it is stored and queried in a more complex way that requires an understanding of the data being passed.  This requires a schema to define that understanding and rules to govern it.",
+            "errorMessage": "The first name field must be populated and at least 2 characters of length",
+            "actionNeeded": "Review the error messages and correct the format the data is delivered to GBG and re-submit"
+        }
+    ]
+}

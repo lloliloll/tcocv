@@ -1,0 +1,12 @@
+{
+  "errors": [
+    {
+      "code": 1008,
+      "location": "Security",
+      "condition": "When either the user credentials are not accepted or their roles do not give them access to this resource",
+      "rationale": "Access needs to be controlled and audited.",
+      "errorMessage": "Either you are not authorised to access this operation or your logon is invalid",
+      "actionNeeded": "Please contact your system administrators"
+    }
+  ]
+}

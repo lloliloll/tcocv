@@ -1,0 +1,12 @@
+{
+    "errors": [
+        {
+            "code": 1001,
+            "location": "Search Parameters",
+            "condition": "This can occur when not enough search parameters are set.  ",
+            "rationale": "If the search is too broad then this can cause the majority or all of the information in the data store to be processed.  This can take a long time to respond and will impact other users of the system",
+            "errorMessage": "This operation requires a minimum of either the booking reference, telephone number, email address or the surname and postcode",
+            "actionNeeded": "Please populate either the booking reference, telephone number, email address or the surname and postcode"
+        }
+    ]
+}

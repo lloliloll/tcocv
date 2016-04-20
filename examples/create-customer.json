@@ -1,8 +1,6 @@
 {
   "customer": {
     "identity": {
-      "customerID": "c4d5eb16-52e8-45d8-a8fc-918b1df70d40",
-      "handoverCode": "AK2W",
       "branchBudgetCentre": "ABCD",
       "customerReferenceNumber": "ABCD",
       "title": "Dr",

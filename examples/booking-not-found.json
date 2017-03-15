@@ -1,0 +1,12 @@
+{
+	"errors": [
+		{
+			"code": 1010,
+			"location": "",
+			"condition": "This can occur when an update is requested for a booking reference that does not match any booking",
+			"rationale": "It is possible for the booking being passed in to be incorrect or corrupted.",
+			"errorMessage": "The booking you are updating does not exist. Please recheck the booking reference you provided is correct. The booking reference you provided was <XXXX>",
+			"actionNeeded": "Confirm that the booking reference is correct"
+		}
+	]
+}

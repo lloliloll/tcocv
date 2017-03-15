@@ -1,0 +1,12 @@
+{
+	"errors": [
+		{
+			"code": 1010,
+			"location": "",
+			"condition": "This can occur when an update is requested for an enquiry reference that does not match any enquiry",
+			"rationale": "It is possible for the enquiry being passed in to be incorrect or corrupted.",
+			"errorMessage": "The enquiry you are updating does not exist. Please recheck the enquiry reference you provided is correct. The enquiry reference you provided was <XXXX>",
+			"actionNeeded": "Confirm that the enquiry reference is correct"
+		}
+	]
+}

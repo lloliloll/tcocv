@@ -1,97 +1,50 @@
-[
-  {
-    "customerResponse": "Yes",
-    "dates": [
-      {
-        "date": "2015-10-29T15:25:15",
-        "type": "start"
-      },
-      {
-        "date": "2014-07-14T03:45:02",
-        "type": "expiry"
-      }
-    ],
-    "goToUrl": "http://dummyimage.com/233x228.jpg/cc0000/ffffff",
-    "id": "1",
-    "priority": 1,
-    "product": "2",
-    "productImage": "http://dummyimage.com/153x173.gif/5fa2dd/ffffff",
-    "reason": "Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor."
-  },
-  {
-    "customerResponse": "Yes",
-    "dates": [
-      {
-        "date": "2015-11-05T05:24:45",
-        "type": "expiry"
-      },
-      {
-        "date": "2013-10-06T22:33:22",
-        "type": "start"
-      },
-      {
-        "date": "2013-11-04T02:43:24",
-        "type": "customerResponse"
-      }
-    ],
-    "goToUrl": "http://dummyimage.com/184x150.jpg/5fa2dd/ffffff",
-    "id": "2",
-    "priority": 2,
-    "product": "8",
-    "productImage": "http://dummyimage.com/235x140.png/ff4444/ffffff",
-    "reason": "Suspendisse ornare consequat lectus."
-  },
-  {
-    "customerResponse": "No",
-    "dates": [
-      {
-        "date": "2015-06-01T16:18:21",
-        "type": "expiry"
-      },
-      {
-        "date": "2014-11-02T01:38:46",
-        "type": "customerResponse"
-      },
-      {
-        "date": "2013-08-19T22:04:50",
-        "type": "start"
-      }
-    ],
-    "goToUrl": "http://dummyimage.com/196x186.jpg/dddddd/000000",
-    "id": "3",
-    "priority": 3,
-    "product": "7",
-    "productImage": "http://dummyimage.com/127x199.jpg/cc0000/ffffff",
-    "reason": "Duis at velit eu est congue elementum."
-  },
-  {
-    "customerResponse": "",
-    "dates": [
-      {
-        "date": "2013-11-16T11:47:37",
-        "type": "start"
-      }
-    ],
-    "goToUrl": "http://dummyimage.com/107x128.png/cc0000/ffffff",
-    "id": "4",
-    "priority": 4,
-    "product": "3",
-    "productImage": "http://dummyimage.com/197x160.gif/5fa2dd/ffffff",
-    "reason": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante."
-  },
-  {
-    "customerResponse": "",
-    "dates": [
-      {
-        "date": "2015-10-04T01:13:43",
-        "type": "expiry"
-      }
-    ],
-    "goToUrl": "http://dummyimage.com/218x222.jpg/dddddd/000000",
-    "id": "5",
-    "priority": 5,
-    "product": "6",
-    "productImage": "http://dummyimage.com/227x143.gif/5fa2dd/ffffff",
-    "reason": "In blandit ultrices enim."
-  }
-]
+ {
+        "gbgID": "54f2a6b0-ae5e-4bd2-ae0c-b547cfadf9de",
+        "recommendations": [
+            {
+                "productID": 1,
+                "product": "Weekend in London",
+                "productImage": "http://dummyimage.com/153x173.gif/5fa2dd/ffffff",
+                "gotoUrl": "http://dummyimage.com/233x228.jpg/cc0000/ffffff",
+                "scoring": 5,
+                "response": "Presented",
+                "timeDateInteraction": "2016-07-14T03:45:02Z"
+            },
+            {
+                "productID": 2,
+                "product": "Amsterdam",
+                "productImage": "http://dummyimage.com/153x173.gif/5fa2dd/ffffff",
+                "gotoUrl": "http://dummyimage.com/233x228.jpg/cc0000/ffffff",
+                "scoring": 9,
+                "response": "Presented",
+                "timeDateInteraction": "2016-07-14T03:45:02Z"
+            },
+            {
+                "productID": 3,
+                "product": "Amsterdam",
+                "productImage": "http://dummyimage.com/153x173.gif/5fa2dd/ffffff",
+                "gotoUrl": "http://dummyimage.com/233x228.jpg/cc0000/ffffff",
+                "scoring": 1,
+                "response": "Maybe",
+                "timeDateInteraction": "2016-07-14T03:45:02Z"
+            },
+            {
+                "productID": 4,
+                "product": "Amsterdam",
+                "productImage": "http://dummyimage.com/153x173.gif/5fa2dd/ffffff",
+                "gotoUrl": "http://dummyimage.com/233x228.jpg/cc0000/ffffff",
+                "scoring": 2,
+                "response": "Maybe",
+                "timeDateInteraction": "2016-07-14T03:45:02Z"
+            },
+            {
+                "productID": 5,
+                "product": "Amsterdam",
+                "productImage": "http://dummyimage.com/153x173.gif/5fa2dd/ffffff",
+                "gotoUrl": "http://dummyimage.com/233x228.jpg/cc0000/ffffff",
+                "scoring": 7,
+                "response": "Presented",
+                "timeDateInteraction": "2016-07-14T03:45:02Z"
+            }
+        ]
+ }

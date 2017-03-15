@@ -1,60 +1,49 @@
-[
+
   {
     "customer": {
       "identity": {
-        "customerID": "046fa7b7-82e2-486b-b3da-42ae0f4ace6e",
-        "title": "Dr",
-        "firstName": "Evelyn",
-        "middlenames": [
-          "Jane"
-        ],
-        "surname": "Ford",
+        "customerId": "c774b597-2921-4c20-a65f-0bb9b83dd61b",
+        "handoverCode": "46J8",
+        "title": "DR",
+        "firstName": "EVELYN",
+        "surname": "FORD",
         "gender": "F",
-        "dateOfBirth": "2007-01-20",
         "contactable": "Y",
         "capture": {
           "urn": 333,
-          "date": "01/01/2015",
-          "modified": "01/01/2015"
+          "createdDate": "2015-05-01T00:48:15Z",
+          "modifiedDate": "1996-06-23T00:48:15Z",
+          "lastUpdatedBy": "SOME_PERSON"
         }
       },
       "addresses": [
         {
           "type": "HOME",
           "contactable": "Y",
-          "lines": [
-            "48 Moose Street",
-            "65 Bowman Trail",
-            "8 Oak Valley Hill",
-            "0063 Mayer Hill"
-          ],
-          "townCity": "Satsumasendai",
-          "county": "Bath and North East Somerset",
-          "postcode": null,
-          "country": "Japan",
-          "capture": {
-            "urn": 333,
-            "date": "01/01/2015",
-            "modified": "01/01/2015"
-          }
-        },
-        {
-          "type": "WORK",
-          "contactable": "Y",
-          "lines": [
-            "4682 Cherokee Park",
-            "402 Lindbergh Avenue",
-            "307 Transport Circle",
-            "3317 Charing Cross Road"
-          ],
-          "townCity": "Bratislava",
-          "county": "Peterborough",
-          "postcode": "841 01",
-          "country": "Slovakia",
-          "capture": {
-            "urn": 555,
-            "date": "01/01/2015",
-            "modified": "01/01/2015"
+          "inputAddress": {
+            "lines": [
+              "30 Churchill Crescent",
+              "Stockport",
+              "Cheshire"
+            ],
+            "postcode": "SK5 6HZ",
+            "country": "GBR"
+          },
+          "cleansedAddress": {
+            "lines": [
+              "30 CHURCHILL CRESCENT",
+              "STOCKPORT",
+              "CHESHIRE"
+            ],
+            "postcode": "SK56HZ",
+            "country": "GBR"
+          },
+          "pafAddress": {
+            "buildingNo": "30",
+            "street": "CHURCHILL CRESCENT",
+            "town": "STOCKPORT",
+            "county": "CHESHIRE",
+            "postcode": "SK56HZ"
           }
         }
       ],
@@ -62,91 +51,88 @@
         {
           "type": "PERSONAL",
           "contactable": "Y",
-          "address": "hlittle0@clickbank.net",
+          "address": "HLITTLE0@CLICKBANK.NET",
           "capture": {
-            "urn": 666,
-            "date": "01/01/2015",
-            "modified": "01/01/2015"
-          }
-        },
-        {
-          "type": "BUSINESS",
-          "contactable": "N",
-          "address": "rfoster1@nifty.com",
-          "capture": {
-            "urn": 666,
-            "date": "01/01/2015",
-            "modified": "01/01/2015"
+            "urn": 333,
+            "createdDate": "2015-05-01T00:48:15Z",
+            "modifiedDate": "1996-06-23T00:48:15Z",
+            "lastUpdatedBy": "SOME_PERSON"
           }
         }
       ],
       "phones": [
         {
-          "type": "HOME",
-          "contactable": "Y",
-          "number": "235-(968)837-1009",
-          "capture": {
-            "urn": 666,
-            "date": "01/01/2015",
-            "modified": "01/01/2015"
-          }
-        },
-        {
-          "type": "WORK",
-          "contactable": "N",
-          "number": "86-(289)664-5158",
-          "capture": {
-            "urn": 666,
-            "date": "01/01/2015"
-          }
-        },
-        {
           "type": "MOBILE1",
           "contactable": "Y",
-          "number": "86-(539)100-3079",
+          "number": "0865391003079",
           "capture": {
-            "urn": 666,
-            "date": "01/01/2015"
+            "urn": 333,
+            "createdDate": "2015-05-01T00:48:15Z",
+            "modifiedDate": "1996-06-23T00:48:15Z",
+            "lastUpdatedBy": "SOME_PERSON"
+          }
+        },
+        {
+          "type": "HOME",
+          "contactable": "Y",
+          "number": "02359688371009",
+          "capture": {
+            "urn": 333,
+            "createdDate": "2015-05-01T00:48:15Z",
+            "modifiedDate": "1996-06-23T00:48:15Z",
+            "lastUpdatedBy": "SOME_PERSON"
           }
         },
         {
           "type": "MOBILE2",
           "contactable": "N",
-          "number": "55-(436)381-4883",
+          "number": "0554363814883",
           "capture": {
-            "urn": 777,
-            "date": "01/01/2015"
+            "urn": 333,
+            "createdDate": "2015-05-01T00:48:15Z",
+            "modifiedDate": "1996-06-23T00:48:15Z",
+            "lastUpdatedBy": "SOME_PERSON"
+          }
+        },
+        {
+          "type": "WORK",
+          "contactable": "N",
+          "number": "0862896645158",
+          "capture": {
+            "urn": 333,
+            "createdDate": "2015-05-01T00:48:15Z",
+            "modifiedDate": "1996-06-23T00:48:15Z",
+            "lastUpdatedBy": "SOME_PERSON"
           }
         }
       ],
       "socials": [
         {
-          "type": "Google",
           "value": "google.ca",
+          "type": "Google",
+          "contactable": "Y",
           "capture": {
-            "urn": 777,
-            "date": "01/01/2015"
+            "urn": 333,
+            "createdDate": "2015-05-01T00:48:15Z",
+            "modifiedDate": "1996-06-23T00:48:15Z",
+            "lastUpdatedBy": "SOME_PERSON"
           }
         },
         {
-          "type": "Other",
           "value": "sitemeter.com",
+          "type": "Other",
+          "contactable": "N",
           "capture": {
-            "urn": 888,
-            "date": "01/01/2015"
+            "urn": 333,
+            "createdDate": "2015-05-01T00:48:15Z",
+            "modifiedDate": "1996-06-23T00:48:15Z",
+            "lastUpdatedBy": "SOME_PERSON"
           }
         }
       ],
       "additional": {
-        "PAFed": "N",
-        "customerType": "",
-        "inputDPS": "",
-        "deceasedInd ": "",
-        "dod": "",
-        "gonewayind ": "",
-        "foreignAddressInd ": "",
-        "mpsIndicator": "",
-        "privilageCardNo ": ""
+        "sampleField1": "Value",
+        "sampleField2": 123
       }
     }
   }

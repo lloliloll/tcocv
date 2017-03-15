@@ -16,11 +16,12 @@ baseUri: http://server/api/{version}/tcocv
       street:
       postcode:
       emailAddress: 
-      telephoneNumber:           
+      telephoneNumber:
+      systemIdentifier:           
     description: Looks for customers using the elements provided as query parameters.  This will return a list of customers, their current address and contact details 
     responses:
       200:
-        description: A succesfull search that has returned at least one person.  The data will always be returned in an array.
+        description: A successful search that has returned at least one person.  The data will always be returned in an array.
         body:
           application/json:
             example: !include examples/search.json
@@ -69,6 +70,37 @@ baseUri: http://server/api/{version}/tcocv
         body:
           application/json:
             example: !include examples/create-already-exists.json
+  /recommendation:
+    /update:
+      post:
+        description: Updates the customer recommendations.
+        body:
+          application/json:
+            example: !include examples/update-customer-recommendation.json
+        responses:
+          200:
+            description: The recommendation was upadted successfully
+          400:
+            description: The request was invalid             
+  /handoverCode:
+    /{handoverCode}:
+      get:
+        description: Gets the specific customer information for this handover code
+        responses:
+          200:
+            description: The request was successful and a customer was found
+            body:
+              application/json:
+                example: !include examples/customer.json
+          400:
+            description: The request failed validation      
+          403:
+            description: The access failed authentication
+            body:
+              application/json:
+                example: !include examples/security.json
+          404:
+            description: The request was successful but no customer was found with that handover code
   /{customerID}:
     get:
       description: Gets the specific customer information for this identifier
@@ -94,6 +126,9 @@ baseUri: http://server/api/{version}/tcocv
       description: This allows elements of the customer resource to be updated or added to
       responses:
         200:
+          headers:
+            matches-found:
+              type: boolean
           description: The patch call was succesful
         400:
           description: The request failed validation
@@ -127,49 +162,9 @@ baseUri: http://server/api/{version}/tcocv
             body:
               application/json:
                 example: !include examples/security.json
-    /holidayBookings:
-      get:
-        description: Retrives booking information for the indicated customer
-        responses:
-          200:
-            description: The request was successful
-            body:
-              application/json:
-                example: !include examples/bookings.json
-          204:
-            description: The request was succesful but no customer was found with that ID. An empty element is returned
-            body:
-              application/json:
-                example: |
-                  {}  
-          403:
-            description: The access failed authentication
-            body:
-              application/json:
-                example: !include examples/security.json
-    /enquiries:
-      get:
-        description: Provides a list of equiries made by the customer
-        responses:
-          200:
-            description: The request was successful
-            body:
-              application/json:
-                example: !include examples/enquiries.json                  
-          204:
-            description: The request was succesful but no customer was found with that ID. An empty element is returned
-            body:
-              application/json:
-                example: |
-                  {}            
-          403:
-            description: The access failed authentication
-            body:
-              application/json:
-                example: !include examples/security.json
     /complaints:
       get:
-        description:
+        description: Get customer complaints
         responses:
           200:
             description: The request was successful
@@ -189,7 +184,7 @@ baseUri: http://server/api/{version}/tcocv
                 example: !include examples/security.json
     /communications:
       get:
-        description:
+        description: Get communications sent to customer
         responses:
           200:
             description: The request was successful
@@ -209,7 +204,7 @@ baseUri: http://server/api/{version}/tcocv
                 example: !include examples/security.json
     /preferences:
       get:
-        description:
+        description: Get customer preferences
         responses:
           200:
             description: The request was successful and preferences have been found
@@ -231,7 +226,7 @@ baseUri: http://server/api/{version}/tcocv
             description: No customer was found with the supplied customer ID
     /wishlist:
       get:
-        description:
+        description: Get customer wishlists
         responses:
           200:
             description: The request was successful
@@ -292,7 +287,7 @@ baseUri: http://server/api/{version}/tcocv
                 example: !include examples/update-not-found.json
     /marketingOptions:
       get:
-        description:
+        description: Get customer marketing options
         responses:
           200:
             description: The request was successful
@@ -309,5 +304,301 @@ baseUri: http://server/api/{version}/tcocv
             description: The access failed authentication
             body:
               application/json:
-                example: !include examples/security.json      
-   
+                example: !include examples/security.json
+    /bookings:
+      get:
+        queryParameters:
+          fromDate:
+          toDate:
+          type:
+          
+        description: Retrieve all bookings for customerId
+        responses:
+          200:
+            description: Valid response
+            body:
+              application/json: 
+                example: !include examples/bookings.json
+          404:
+              description: The customer belonging to id provided could not be found   
+      /booking:      
+        /detail:
+          post:
+            description: Creates a booking, this will not interact with the summary block
+            body:
+              application/json:
+                example: !include examples/create-booking.json
+            responses:
+              201:                
+                description: The booking was created succesfully                
+              400:
+                description: The request failed validation                 
+              403:
+                description: The access failed authentication
+                body:
+                  application/json:
+                    example: !include examples/security.json                                                  
+              404:
+                description: The customer belonging to id provided could not be found
+                body:
+                  application/json:
+                    example: !include examples/create-booking-not-found.json
+              409:
+                description: The bookingId already exists                
+      /{bookingID}:
+        /detail:
+          /dealFields:
+            patch:
+              description: This allows elements of the deal resource to be updated or added to
+              responses:
+                200:
+                  description: The patch call was succesful
+                400:
+                  description: The request was invalid
+                403:
+                  description: The access failed authentication
+                  body:
+                    application/json:
+                      example: !include examples/security.json 
+                404:
+                  description: The booking ID or customer does not exist
+                  body:
+                    application/json:
+                      example: !include examples/booking-not-found.json
+          /travelLegs:
+            post:
+              description: Creates a new travel leg.
+              responses:
+                201:
+                  description: The Travel Leg was created succesfully.
+                400:
+                  description: Sequence number for the Travel Leg is empty or null.
+                404:
+                  description: The Booking and Customer that the Travel Leg belongs to cannot be found.
+                409:
+                  description: Travel Leg sequence number already exists.
+            /{legID}:
+              patch:
+                description: This allows elements of the travel leg resource to be updated or added to
+                responses:
+                  200:
+                    description: The patch call was succesful
+                  400:
+                    description: The request was invalid
+                  403:
+                    description: The access failed authentication
+                    body:
+                      application/json:
+                        example: !include examples/security.json 
+                  404:
+                    description: The travel leg ID does not exist
+                    body:
+                      application/json:
+                        example: !include examples/travel-leg-not-found.json
+          /costings:
+            post:
+              description: Creates a booking costing.
+              responses:
+                201:                
+                  description: The costing creation was successful                
+                400:
+                  description: The request was invalid       
+                404:
+                  description: The booking and customer that the costing belongs to cannot be found
+                409:
+                  description: Costing sequence number already exists
+            /{costingsID}:
+              patch:
+                description: This allows elements of the costings resource to be updated or added to
+                responses:
+                  200:
+                    description: The patch call was succesful
+                  400:
+                    description: The request was invalid
+                  403:
+                    description: The access failed authentication
+                    body:
+                      application/json:
+                        example: !include examples/security.json 
+                  404:
+                    description: The costings ID does not exist
+                    body:
+                      application/json:
+                        example: !include examples/costing-not-found.json
+          /manifestsCombined:
+            post:
+              description: Creates a booking manifest.
+              responses:
+                201:                
+                  description: The manifest was created succesfully                
+                400:
+                  description: Sequence number for Manifest is empty or null.          
+                404:
+                  description: The booking and customer that the manifest belongs to cannot be found
+                409:
+                  description: Manifest sequence number already exists
+            /{manifestID}:
+              patch:
+                description: This allows elements of the manifest resource to be updated or added to
+                responses:
+                  200:
+                    description: The patch call was succesful
+                  400:
+                    description: The request was invalid
+                  403:
+                    description: The access failed authentication
+                    body:
+                      application/json:
+                        example: !include examples/security.json 
+                  404:
+                    description: The manifest ID does not exist
+                    body:
+                      application/json:
+                        example: !include examples/manifest-not-found.json
+    /enquiries:
+      get:
+        description: Retrieve all enquiries for customerID
+        responses:
+          200:
+            description: Valid response
+            body:
+              application/json: 
+                example: | 
+                  {}
+          404:
+              description: The customer belonging to ID provided could not be found   
+      /enquiry:      
+        /detail:
+          post:
+            description: Creates an enquiry, this will not interact with the summary block
+            body:
+              application/json:
+                example: !include examples/create-enquiry.json
+            responses:
+              201:                
+                description: The enquiry was created succesfully                
+              400:
+                description: The request failed validation                 
+              403:
+                description: The access failed authentication
+                body:
+                  application/json:
+                    example: !include examples/security.json                                                  
+              404:
+                description: The customer belonging to ID provided could not be found
+                body:
+                  application/json:
+                    example: !include examples/create-enquiry-not-found.json
+              409:
+                description: The enquiryID already exists                
+      /{enquiryID}:
+        /detail:
+          /dealFields:
+            patch:
+              description: This allows elements of the deal resource to be updated or added to
+              responses:
+                200:
+                  description: The patch call was succesful
+                400:
+                  description: The request was invalid
+                403:
+                  description: The access failed authentication
+                  body:
+                    application/json:
+                      example: !include examples/security.json 
+                404:
+                  description: The enquiry ID or customer does not exist
+                  body:
+                    application/json:
+                      example: !include examples/enquiry-not-found.json
+          /travelLegs:
+            post:
+              description: Creates a new travel leg.
+              responses:
+                201:
+                  description: The Travel Leg was created succesfully.
+                400:
+                  description: Sequence number for the Travel Leg is empty or null.
+                404:
+                  description: The Enquiry and Customer that the Travel Leg belongs to cannot be found.
+                409:
+                  description: Travel Leg sequence number already exists.
+            /{legID}:
+              patch:
+                description: This allows elements of the travel leg resource to be updated or added to
+                responses:
+                  200:
+                    description: The patch call was succesful
+                  400:
+                    description: The request was invalid
+                  403:
+                    description: The access failed authentication
+                    body:
+                      application/json:
+                        example: !include examples/security.json 
+                  404:
+                    description: The travel leg ID does not exist
+                    body:
+                      application/json:
+                        example: !include examples/travel-leg-not-found.json
+          /costings:
+            post:
+              description: Creates an enquiry costing.
+              responses:
+                201:                
+                  description: The costing creation was successful                
+                400:
+                  description: The request was invalid       
+                404:
+                  description: The booking and customer that the costing belongs to cannot be found
+                409:
+                  description: Costing sequence number already exists
+            /{costingsID}:
+              patch:
+                description: This allows elements of the costings resource to be updated or added to
+                responses:
+                  200:
+                    description: The patch call was succesful
+                  400:
+                    description: The request was invalid
+                  403:
+                    description: The access failed authentication
+                    body:
+                      application/json:
+                        example: !include examples/security.json 
+                  404:
+                    description: The costings ID does not exist
+                    body:
+                      application/json:
+                        example: !include examples/costing-not-found.json
+          /manifestsCombined:
+            post:
+              description: Creates a booking manifest.
+              responses:
+                201:                
+                  description: The manifest was created succesfully                
+                400:
+                  description: Sequence number for Manifest is empty or null.          
+                404:
+                  description: The booking and customer that the manifest belongs to cannot be found
+                409:
+                  description: Manifest sequence number already exists
+            /{manifestID}:
+              patch:
+                description: This allows elements of the manifest resource to be updated or added to
+                responses:
+                  200:
+                    description: The patch call was succesful
+                  400:
+                    description: The request was invalid
+                  403:
+                    description: The access failed authentication
+                    body:
+                      application/json:
+                        example: !include examples/security.json 
+                  404:
+                    description: The manifest ID does not exist
+                    body:
+                      application/json:
+                        example: !include examples/manifest-not-found.json
+ 
